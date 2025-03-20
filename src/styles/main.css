@@ -192,3 +192,6 @@ td > button{
 td > .hidden{
     display: none; 
 }
+.show{
+    display: block;
+}

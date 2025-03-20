@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App de Contactos</title>
-    <link rel="stylesheet" href="./styles/main.css">
-    <script defer src="./js/main.js" type="module"></script>
+    <link rel="stylesheet" href="./src/styles/main.css">
+    <script defer src="./src/scripts/main.js" type="module"></script>
 </head>
 
 <body>
@@ -16,7 +16,7 @@
             <ul class="nav_list">
                 <li id="todos" class="list_item">Todos</li>
                 <li id="pendientes" class="list_item">Pendientes</li>
-                <li id="pagada" class="list_item">Pagadas</li>
+                <li id="pagadas" class="list_item">Pagadas</li>
             </ul>
         </nav>
 
@@ -31,8 +31,9 @@
                     <th>Action</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
+            <tbody id="datosFact">
+<!-- usar -->
+                <tr >
                     <td>1</td>
                     <td>F001</td>
                     <td>Compra de muebles de oficina</td>
@@ -40,6 +41,7 @@
                     <td>12-10-2023</td>
                     <td><button class="action">Del</button></td>
                 </tr>
+
                 <tr>
                     <td>2</td>
                     <td>F002</td>
@@ -55,7 +57,7 @@
 
     <div id="modal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close" id="close">&times;</span>
             <h2>Agregar Factura</h2>
             <form id="contactForm">
                 <label for="factura">Numero de Factura:</label>

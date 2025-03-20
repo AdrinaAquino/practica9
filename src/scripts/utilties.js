@@ -23,3 +23,52 @@ export const facturas = [
     { id: 14, numeroFactura: "F014", descripcion: "Mantenimiento de equipos de aire acondicionado", estado: "pagada", fecha: "27-04-2024" },
     { id: 15, numeroFactura: "F015", descripcion: "Compra de insumos médicos", estado: "pendiente", fecha: "30-04-2024" }
 ];
+
+export function fila(objeto) {
+    if (objeto.estado === "pagada") {
+        const template_fila = `<tr></tr><td>${objeto.id}</td>
+                <td>${objeto.numeroFactura}</td>
+                <td>${objeto.descripcion}</td>
+                <td style="color: #00ce00;">${objeto.estado}</td>
+                <td>${objeto.fecha}</td>
+                <td><button class="action" id="${objeto.id}">Del</button></td></tr>`
+        return template_fila
+    } else {
+        const template_fila = `<tr></tr><td>${objeto.id}</td>
+            <td>${objeto.numeroFactura}</td>
+            <td>${objeto.descripcion}</td>
+            <td style="color:rgb(206, 0, 0);">${objeto.estado}</td>
+            <td>${objeto.fecha}</td>
+            <td></td></tr>`
+        return template_fila
+    }
+}
+
+export function todas(fac, listaHTML) {
+    listaHTML.innerHTML = ""
+    fac.forEach(e => {
+        let filaFun = fila(e);
+        listaHTML.innerHTML += filaFun
+    })
+}
+
+export function pendiente(fac, listaHTML) {
+    listaHTML.innerHTML = ""
+    fac.forEach((e) => {
+        if (e.estado === "pendiente") {
+            let filaFun = fila(e);
+            listaHTML.innerHTML += filaFun
+        }
+    })
+}
+
+export function pagada(fac, listaHTML) {
+    listaHTML.innerHTML = ""
+    fac.forEach((e) => {
+        if (e.estado === "pagada") {
+            let filaFun = fila(e);
+            listaHTML.innerHTML += filaFun
+        }
+    })
+
+}
