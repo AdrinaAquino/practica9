@@ -53,4 +53,5 @@ pagadas.addEventListener("click", (e) => { pagada(facturas, datosFact) })
 
 contactForm.addEventListener("submit", agregarFactura)
 datosFact.addEventListener("click", eliminarFactura)
+
 todas(facturas, datosFact)
